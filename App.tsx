@@ -27,7 +27,7 @@ const FadeIn: React.FC<{ children: React.ReactNode, delay?: number }> = ({ child
 const App: React.FC = () => {
   const EBOOK_LINK = "https://pay.kiwify.com.br/y9sK34d";
   
-  // These hooks are safe here because they are at the top level of a valid functional component
+  // React Hooks must stay at the top level of the component
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -59,15 +59,6 @@ const App: React.FC = () => {
         </div>
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center px-5 py-2 mb-10 text-[10px] font-black tracking-[0.3em] text-slate-500 uppercase border border-slate-200 rounded-full bg-white/80 glass"
-          >
-            Edição Definitiva 2025
-          </motion.div>
-          
           <motion.h1 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
